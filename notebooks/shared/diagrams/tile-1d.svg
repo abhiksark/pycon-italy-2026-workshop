@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 380" font-family="Inter, system-ui, Arial, sans-serif">
+  <style>
+    .bg          { fill: #FAFAFA; }
+    .cell        { fill: #F4F4F5; stroke: #18181B; stroke-width: 2; }
+    .cell-active { fill: #E76F51; stroke: #18181B; stroke-width: 2; }
+    .cell-masked { fill: #FAFAFA; stroke: #18181B; stroke-width: 2; stroke-dasharray: 6,4; }
+    .label       { font-family: 'Inter', 'Arial', sans-serif; font-size: 20px; font-weight: 600; fill: #18181B; }
+    .label-muted { font-family: 'Inter', 'Arial', sans-serif; font-size: 14px; font-weight: 600; fill: #52525B; }
+    .code        { font-family: 'JetBrains Mono', 'Source Code Pro', monospace; font-size: 18px; fill: #18181B; }
+    .code-light  { font-family: 'JetBrains Mono', 'Source Code Pro', monospace; font-size: 14px; fill: #FAFAFA; font-weight: 700; }
+    .code-muted  { font-family: 'JetBrains Mono', 'Source Code Pro', monospace; font-size: 14px; fill: #52525B; }
+    .arrow-muted { stroke: #52525B; stroke-width: 2; fill: none; marker-end: url(#arrow-muted); marker-start: url(#arrow-muted-start); }
+  </style>
+  <defs>
+    <marker id="arrow-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#52525B"/>
+    </marker>
+    <marker id="arrow-muted-start" viewBox="0 0 10 10" refX="1" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M10,0 L0,5 L10,10 z" fill="#52525B"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1500" height="380"/>
+
+  <!-- n dimension arrow: terminates at the boundary between valid lanes (offset 29) and the dashed tail (offsets 30, 31) -->
+  <line class="arrow-muted" x1="80" y1="80" x2="1370" y2="80"/>
+  <text class="code-muted" x="725" y="62" text-anchor="middle">n = 30</text>
+
+  <!-- ======== Tile 0 (pid = 0) ========  x = 80..400, 8 sub-cells of 40 -->
+  <g>
+    <rect class="cell" x="80"  y="140" width="40" height="70"/>
+    <rect class="cell" x="120" y="140" width="40" height="70"/>
+    <rect class="cell" x="160" y="140" width="40" height="70"/>
+    <rect class="cell" x="200" y="140" width="40" height="70"/>
+    <rect class="cell" x="240" y="140" width="40" height="70"/>
+    <rect class="cell" x="280" y="140" width="40" height="70"/>
+    <rect class="cell" x="320" y="140" width="40" height="70"/>
+    <rect class="cell" x="360" y="140" width="40" height="70"/>
+  </g>
+  <text class="code" x="240" y="248" text-anchor="middle">pid = 0</text>
+
+  <!-- ======== Tile 1 (pid = 1) ========  x = 430..750 -->
+  <g>
+    <rect class="cell" x="430" y="140" width="40" height="70"/>
+    <rect class="cell" x="470" y="140" width="40" height="70"/>
+    <rect class="cell" x="510" y="140" width="40" height="70"/>
+    <rect class="cell" x="550" y="140" width="40" height="70"/>
+    <rect class="cell" x="590" y="140" width="40" height="70"/>
+    <rect class="cell" x="630" y="140" width="40" height="70"/>
+    <rect class="cell" x="670" y="140" width="40" height="70"/>
+    <rect class="cell" x="710" y="140" width="40" height="70"/>
+  </g>
+  <text class="code" x="590" y="248" text-anchor="middle">pid = 1</text>
+
+  <!-- ======== Tile 2 (pid = 2) ========  x = 780..1100 -->
+  <g>
+    <rect class="cell" x="780"  y="140" width="40" height="70"/>
+    <rect class="cell" x="820"  y="140" width="40" height="70"/>
+    <rect class="cell" x="860"  y="140" width="40" height="70"/>
+    <rect class="cell" x="900"  y="140" width="40" height="70"/>
+    <rect class="cell" x="940"  y="140" width="40" height="70"/>
+    <rect class="cell" x="980"  y="140" width="40" height="70"/>
+    <rect class="cell" x="1020" y="140" width="40" height="70"/>
+    <rect class="cell" x="1060" y="140" width="40" height="70"/>
+  </g>
+  <text class="code" x="940" y="248" text-anchor="middle">pid = 2</text>
+
+  <!-- ======== Tile 3 (pid = 3, active) ========  x = 1130..1450
+       Sub-cells 0..5 are coral (offsets 24..29 valid).
+       Sub-cells 6, 7 are dashed (offsets 30, 31 past n). -->
+  <g>
+    <rect class="cell-active" x="1130" y="140" width="40" height="70"/>
+    <rect class="cell-active" x="1170" y="140" width="40" height="70"/>
+    <rect class="cell-active" x="1210" y="140" width="40" height="70"/>
+    <rect class="cell-active" x="1250" y="140" width="40" height="70"/>
+    <rect class="cell-active" x="1290" y="140" width="40" height="70"/>
+    <rect class="cell-active" x="1330" y="140" width="40" height="70"/>
+    <rect class="cell-masked" x="1370" y="140" width="40" height="70"/>
+    <rect class="cell-masked" x="1410" y="140" width="40" height="70"/>
+  </g>
+
+  <!-- offset labels inside the coral tile sub-cells -->
+  <g text-anchor="middle">
+    <text class="code-light" x="1150" y="183">24</text>
+    <text class="code-light" x="1190" y="183">25</text>
+    <text class="code-light" x="1230" y="183">26</text>
+    <text class="code-light" x="1270" y="183">27</text>
+    <text class="code-light" x="1310" y="183">28</text>
+    <text class="code-light" x="1350" y="183">29</text>
+    <text class="code-muted" x="1390" y="183">30</text>
+    <text class="code-muted" x="1430" y="183">31</text>
+  </g>
+
+  <text class="code" x="1290" y="248" text-anchor="middle">pid = 3</text>
+
+  <!-- BLOCK_SIZE dimension arrow under the coral tile, spanning all 8 sub-cells -->
+  <line class="arrow-muted" x1="1130" y1="290" x2="1450" y2="290"/>
+  <text class="code-muted" x="1290" y="318" text-anchor="middle">BLOCK_SIZE</text>
+</svg>

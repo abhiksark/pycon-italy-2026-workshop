@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 240" font-family="Inter, system-ui, Arial, sans-serif">
+  <style>
+    .bg          { fill: #FAFAFA; }
+    .cell        { fill: #F4F4F5; stroke: #18181B; stroke-width: 2; }
+    .cell-active { fill: #E76F51; stroke: #18181B; stroke-width: 2; }
+    .label       { font-family: 'Inter', 'Arial', sans-serif; font-size: 22px; font-weight: 600; fill: #18181B; }
+    .label-light { font-family: 'Inter', 'Arial', sans-serif; font-size: 22px; font-weight: 700; fill: #FAFAFA; }
+    .arrow        { stroke: #18181B; stroke-width: 2;   fill: none; marker-end: url(#arrow-ink); }
+    .arrow-active { stroke: #E76F51; stroke-width: 3;   fill: none; marker-end: url(#arrow-coral); }
+  </style>
+  <defs>
+    <marker id="arrow-ink" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#18181B"/>
+    </marker>
+    <marker id="arrow-coral" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#E76F51"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1440" height="240"/>
+
+  <!-- six stage boxes, horizontal pipeline; the last one (SASS) is the active element -->
+  <rect class="cell"        x="20"   y="80" width="200" height="80"/>
+  <rect class="cell"        x="260"  y="80" width="200" height="80"/>
+  <rect class="cell"        x="500"  y="80" width="200" height="80"/>
+  <rect class="cell"        x="740"  y="80" width="200" height="80"/>
+  <rect class="cell"        x="980"  y="80" width="200" height="80"/>
+  <rect class="cell-active" x="1220" y="80" width="200" height="80"/>
+
+  <!-- stage labels -->
+  <g class="label" text-anchor="middle">
+    <text x="120"  y="128">Python</text>
+    <text x="360"  y="128">Triton-IR</text>
+    <text x="600"  y="128">TritonGPU-IR</text>
+    <text x="840"  y="128">LLVM IR</text>
+    <text x="1080" y="128">PTX</text>
+    <text class="label-light" x="1320" y="128">SASS</text>
+  </g>
+
+  <!-- ink arrows between idle stages -->
+  <line class="arrow" x1="220"  y1="120" x2="258"  y2="120"/>
+  <line class="arrow" x1="460"  y1="120" x2="498"  y2="120"/>
+  <line class="arrow" x1="700"  y1="120" x2="738"  y2="120"/>
+  <line class="arrow" x1="940"  y1="120" x2="978"  y2="120"/>
+
+  <!-- the active transition: PTX → SASS, coral arrow -->
+  <line class="arrow-active" x1="1180" y1="120" x2="1218" y2="120"/>
+</svg>

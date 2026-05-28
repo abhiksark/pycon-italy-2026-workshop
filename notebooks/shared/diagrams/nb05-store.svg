@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 740" font-family="Inter, system-ui, Arial, sans-serif">
+  <style>
+    .bg          { fill: #FAFAFA; }
+    .cell        { fill: #F4F4F5; stroke: #18181B; stroke-width: 2; }
+    .cell-active { fill: #E76F51; stroke: #18181B; stroke-width: 2; }
+    .label       { font-family: 'Inter', 'Arial', sans-serif; font-size: 20px; font-weight: 600; fill: #18181B; }
+    .label-muted { font-family: 'Inter', 'Arial', sans-serif; font-size: 14px; font-weight: 600; fill: #52525B; }
+    .code        { font-family: 'JetBrains Mono', 'Source Code Pro', monospace; font-size: 18px; fill: #18181B; }
+    .code-muted  { font-family: 'JetBrains Mono', 'Source Code Pro', monospace; font-size: 14px; fill: #52525B; }
+    .arrow-muted  { stroke: #52525B; stroke-width: 2; fill: none; marker-end: url(#arrow-muted); }
+    .arrow-active { stroke: #E76F51; stroke-width: 3; fill: none; marker-end: url(#arrow-coral); }
+  </style>
+  <defs>
+    <marker id="arrow-muted" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#52525B"/>
+    </marker>
+    <marker id="arrow-coral" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#E76F51"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="780" height="740"/>
+
+  <!-- N dimension indicator above the valid region (3 cols wide) -->
+  <line class="arrow-muted" x1="160" y1="115" x2="458" y2="115"/>
+  <text class="code-muted" x="310" y="100" text-anchor="middle">N</text>
+
+  <!-- M dimension indicator left of the valid region (3 rows tall) -->
+  <line class="arrow-muted" x1="125" y1="140" x2="125" y2="438"/>
+  <g transform="translate(102, 290) rotate(-90)">
+    <text class="code-muted" x="0" y="0" text-anchor="middle">M</text>
+  </g>
+
+  <!-- C tile: 4×4 grid; top-left 3×3 valid (idle), right col + bottom row coral (overhang) -->
+  <!-- row 0 -->
+  <rect class="cell"        x="160" y="140" width="100" height="100"/>
+  <rect class="cell"        x="260" y="140" width="100" height="100"/>
+  <rect class="cell"        x="360" y="140" width="100" height="100"/>
+  <rect class="cell-active" x="460" y="140" width="100" height="100"/>
+  <!-- row 1 -->
+  <rect class="cell"        x="160" y="240" width="100" height="100"/>
+  <rect class="cell"        x="260" y="240" width="100" height="100"/>
+  <rect class="cell"        x="360" y="240" width="100" height="100"/>
+  <rect class="cell-active" x="460" y="240" width="100" height="100"/>
+  <!-- row 2 -->
+  <rect class="cell"        x="160" y="340" width="100" height="100"/>
+  <rect class="cell"        x="260" y="340" width="100" height="100"/>
+  <rect class="cell"        x="360" y="340" width="100" height="100"/>
+  <rect class="cell-active" x="460" y="340" width="100" height="100"/>
+  <!-- row 3 (overhang) -->
+  <rect class="cell-active" x="160" y="440" width="100" height="100"/>
+  <rect class="cell-active" x="260" y="440" width="100" height="100"/>
+  <rect class="cell-active" x="360" y="440" width="100" height="100"/>
+  <rect class="cell-active" x="460" y="440" width="100" height="100"/>
+
+  <!-- C label, top-right of tile -->
+  <text class="label" x="580" y="158">C</text>
+
+  <!-- c_mask label, pointing at the overhang region (bottom-right) -->
+  <text class="code" x="580" y="500">c_mask</text>
+
+  <!-- tl.store arrow from C bottom to HBM top -->
+  <line class="arrow-active" x1="360" y1="545" x2="360" y2="608"/>
+  <text class="code" x="380" y="582">tl.store</text>
+
+  <!-- HBM band -->
+  <rect class="cell" x="160" y="610" width="400" height="80"/>
+  <text class="label" x="360" y="658" text-anchor="middle">HBM</text>
+</svg>

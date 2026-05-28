@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" font-family="Inter, system-ui, Arial, sans-serif">
+  <style>
+    .bg          { fill: #FAFAFA; }
+    .cell        { fill: #F4F4F5; stroke: #18181B; stroke-width: 2; }
+    .cell-active { fill: #E76F51; stroke: #18181B; stroke-width: 2; }
+    .cell-masked { fill: #FAFAFA; stroke: #18181B; stroke-width: 2; stroke-dasharray: 6,4; }
+    .label       { font-family: 'Inter', 'Arial', sans-serif; font-size: 18px; font-weight: 600; fill: #18181B; }
+    .label-muted { font-family: 'Inter', 'Arial', sans-serif; font-size: 14px; font-weight: 600; fill: #52525B; }
+    .code        { font-family: 'JetBrains Mono', 'Source Code Pro', monospace; font-size: 18px; fill: #18181B; }
+    .code-light  { font-family: 'JetBrains Mono', 'Source Code Pro', monospace; font-size: 18px; fill: #FAFAFA; font-weight: 700; }
+    .glyph-ok    { font-family: 'Inter', sans-serif; font-size: 26px; font-weight: 800; fill: #18181B; }
+    .glyph-x     { font-family: 'Inter', sans-serif; font-size: 26px; font-weight: 800; fill: #E76F51; }
+  </style>
+
+  <rect class="bg" x="0" y="0" width="1200" height="340"/>
+
+  <!-- tl.load label, top-left -->
+  <text class="code" x="80" y="36">tl.load</text>
+
+  <!-- index numbers above input cells -->
+  <g class="label-muted" text-anchor="middle">
+    <text x="140"  y="68">0</text>
+    <text x="264"  y="68">1</text>
+    <text x="388"  y="68">2</text>
+    <text x="512"  y="68">3</text>
+    <text x="636"  y="68">4</text>
+    <text x="760"  y="68">5</text>
+    <text x="884"  y="68">6</text>
+    <text x="1008" y="68">7</text>
+  </g>
+
+  <!-- input cells: 6 valid, 2 past-n (masked / dashed) -->
+  <rect class="cell"        x="80"   y="84" width="120" height="80"/>
+  <rect class="cell"        x="204"  y="84" width="120" height="80"/>
+  <rect class="cell"        x="328"  y="84" width="120" height="80"/>
+  <rect class="cell"        x="452"  y="84" width="120" height="80"/>
+  <rect class="cell"        x="576"  y="84" width="120" height="80"/>
+  <rect class="cell"        x="700"  y="84" width="120" height="80"/>
+  <rect class="cell-masked" x="824"  y="84" width="120" height="80"/>
+  <rect class="cell-masked" x="948"  y="84" width="120" height="80"/>
+
+  <!-- input values inside the 6 valid cells -->
+  <g class="code" text-anchor="middle">
+    <text x="140" y="132">0.42</text>
+    <text x="264" y="132">1.07</text>
+    <text x="388" y="132">3.14</text>
+    <text x="512" y="132">2.71</text>
+    <text x="636" y="132">0.05</text>
+    <text x="760" y="132">9.99</text>
+  </g>
+
+  <!-- ✓ / ✗ glyph row -->
+  <g text-anchor="middle">
+    <text class="glyph-ok" x="140"  y="208">✓</text>
+    <text class="glyph-ok" x="264"  y="208">✓</text>
+    <text class="glyph-ok" x="388"  y="208">✓</text>
+    <text class="glyph-ok" x="512"  y="208">✓</text>
+    <text class="glyph-ok" x="636"  y="208">✓</text>
+    <text class="glyph-ok" x="760"  y="208">✓</text>
+    <text class="glyph-x"  x="884"  y="208">✗</text>
+    <text class="glyph-x"  x="1008" y="208">✗</text>
+  </g>
+
+  <!-- output cells: 6 valid carry the values through, last 2 coral with 0.0 -->
+  <rect class="cell"        x="80"   y="232" width="120" height="80"/>
+  <rect class="cell"        x="204"  y="232" width="120" height="80"/>
+  <rect class="cell"        x="328"  y="232" width="120" height="80"/>
+  <rect class="cell"        x="452"  y="232" width="120" height="80"/>
+  <rect class="cell"        x="576"  y="232" width="120" height="80"/>
+  <rect class="cell"        x="700"  y="232" width="120" height="80"/>
+  <rect class="cell-active" x="824"  y="232" width="120" height="80"/>
+  <rect class="cell-active" x="948"  y="232" width="120" height="80"/>
+
+  <!-- output values -->
+  <g class="code" text-anchor="middle">
+    <text x="140" y="280">0.42</text>
+    <text x="264" y="280">1.07</text>
+    <text x="388" y="280">3.14</text>
+    <text x="512" y="280">2.71</text>
+    <text x="636" y="280">0.05</text>
+    <text x="760" y="280">9.99</text>
+    <text class="code-light" x="884"  y="280">0.0</text>
+    <text class="code-light" x="1008" y="280">0.0</text>
+  </g>
+</svg>
