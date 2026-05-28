@@ -1,0 +1,19 @@
+# requirements.txt
+# Workshop dependencies for "Write Your First High-Performance GPU Kernel in Python!"
+
+# --- core ---
+numpy>=1.26
+pillow>=10.0
+matplotlib>=3.8
+opencv-python>=4.9          # CPU baseline for the nb04 blur comparison
+
+# --- GPU stack (Colab has torch preinstalled; pip will skip if compatible) ---
+torch>=2.5
+triton>=3.0
+cupy-cuda12x>=13.0
+
+# --- dev / notebook tooling ---
+pytest>=8.0
+nbformat>=5.10
+jupyter>=1.0
+cairosvg>=2.7
