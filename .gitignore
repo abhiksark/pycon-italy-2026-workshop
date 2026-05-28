@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# Jupyter
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+
+# Marp build artifacts
+slides/*.html
+slides/.cache/
+
+# Editors / OS
+.DS_Store
+.vscode/
+.idea/
+*.swp
+
+# pytest
+.pytest_cache/
+.gstack/
+docs/triton-cheatsheet.inlined.md
+
+# Private / internal — never push from manual sync
+CLAUDE.md
+AGENTS.md
+.claude/
+docs/superpowers/
+docs/IMPLEMENTATION-LOG.md
+trailer/
+blur.hatchet
+pyproject.toml
+slides/
+docs/*.md
+docs/assets/
+docs/diagrams/
+docs/build-cheatsheet-pdf.sh
+scripts/
