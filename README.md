@@ -38,6 +38,8 @@ You're ready when the last cell prints `✓ All checks passed. See you in Bologn
 
 Five notebooks, each adding exactly one new GPU primitive on top of the last. The boilerplate is written — imports, input data, reference output, correctness check, timing harness. You fill in the kernel body, marked by numbered `# TODO (N/M):` blocks. **18 TODOs** across the four attendee notebooks.
 
+Keep the **[cheatsheet](docs/triton-cheatsheet.pdf)** (PDF) open while you work — Triton primitives, GPU vocabulary, and the common gotchas in one place.
+
 | # | Notebook | Format | What's new |
 |---|----------|--------|------------|
 | 01 | [`01-vector-add-cupy-raw`](notebooks/01-vector-add-cupy-raw.ipynb) | Speaker demo | What a GPU kernel actually is: CUDA C in a Python string, JIT-compiled and launched. |
