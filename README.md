@@ -1,10 +1,10 @@
 <!-- README.md -->
 
-# Write Your First High-Performance GPU Kernel in Python!
-
 <p align="center">
-  <img src="notebooks/shared/assets/nb05-matmul-tiling.png" alt="Tiled matrix multiplication — the workshop capstone" width="480">
+  <img src="docs/hero.png" alt="Write Your First High-Performance GPU Kernel in Python! — PyCon Italia 2026, Bologna, 29 May 2026" width="840">
 </p>
+
+# Write Your First High-Performance GPU Kernel in Python!
 
 **PyCon Italy 2026 · Bologna · Workshop session: May 29, 2026**
 Speaker: [Abhik Sarkar](https://www.abhik.ai) · [Session page](https://2026.pycon.it/profile/bxlreb)
