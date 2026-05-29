@@ -6,7 +6,7 @@
   <img src="notebooks/shared/assets/nb05-matmul-tiling.png" alt="Tiled matrix multiplication — the workshop capstone" width="480">
 </p>
 
-**PyCon Italy 2026 · Bologna · May 27–30, 2026**
+**PyCon Italy 2026 · Bologna · Workshop session: May 29, 2026**
 Speaker: [Abhik Sarkar](https://www.abhik.ai) · [Session page](https://2026.pycon.it/profile/bxlreb)
 
 A 120-minute hands-on workshop. You walk in fluent in NumPy and PyTorch. You walk out with your own tiled matrix-multiplication kernel running on a GPU — correctness-tested against `torch.matmul`, benchmarked, and **roughly 100,000× faster than the equivalent naive Python loop**.
@@ -43,7 +43,7 @@ Five notebooks, each adding exactly one new GPU primitive on top of the last. Th
 | 01 | [`01-vector-add-cupy-raw`](notebooks/01-vector-add-cupy-raw.ipynb) | Speaker demo | What a GPU kernel actually is: CUDA C in a Python string, JIT-compiled and launched. |
 | 02 | [`02-vector-add-triton`](notebooks/02-vector-add-triton.ipynb) | 3 TODOs | Your first Triton kernel. `program_id`, `tl.arange`, masks. |
 | 03 | [`03-reduction-triton`](notebooks/03-reduction-triton.ipynb) | 4 TODOs | Parallel sum. `tl.sum`, single-block core + multi-block bonus. |
-| 04 | [`04-image-blur-triton`](notebooks/04-image-blur-triton.ipynb) | 5 TODOs | Fused softmax in one kernel (beat the memory wall), then a 1D blur worked example + a 2D halo bonus. |
+| 04 | [`04-softmax-blur-triton`](notebooks/04-softmax-blur-triton.ipynb) | 5 TODOs | Fused softmax in one kernel (beat the memory wall), then a 1D blur worked example + a 2D halo bonus. |
 | 05 | [`05-tiled-matmul-triton`](notebooks/05-tiled-matmul-triton.ipynb) | 6 TODOs | **The capstone.** Tiling + `tl.dot`, benchmarked against `torch.matmul`. |
 
 Solutions land on the `main` branch after the session. The standalone benchmark is already here — run `python -m bench.compare_vs_torch` to compare the naive Python loop, NumPy, the Triton kernel, and `torch.matmul`.
